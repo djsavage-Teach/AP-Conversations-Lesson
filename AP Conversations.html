@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Voz de la Juventud - Estudiantes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .nav-btn.active {
+            background-color: #38bdf8;
+            color: white;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timer-glow {
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4 md:p-8">
+
+    <header class="max-w-5xl mx-auto w-full mb-8 text-center">
+        <h1 class="text-4xl font-extrabold text-white tracking-tight mb-2">La Voz de la Juventud</h1>
+        <p class="text-sky-400 font-medium uppercase tracking-widest text-sm">Preparación para el Examen AP: Tarea 4</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="max-w-5xl mx-auto w-full flex flex-wrap justify-center gap-2 mb-8">
+        <button onclick="showTab(1)" id="btn-1" class="nav-btn active px-6 py-2 rounded-full font-bold text-sm transition-all border border-slate-700 bg-slate-800 hover:bg-slate-700">1. WARM-UP</button>
+        <button onclick="showTab(2)" id="btn-2" class="nav-btn px-6 py-2 rounded-full font-bold text-sm transition-all border border-slate-700 bg-slate-800 hover:bg-slate-700">2. INVESTIGACIÓN</button>
+        <button onclick="showTab(3)" id="btn-3" class="nav-btn px-6 py-2 rounded-full font-bold text-sm transition-all border border-slate-700 bg-slate-800 hover:bg-slate-700">3. SPEED DATING</button>
+        <button onclick="showTab(4)" id="btn-4" class="nav-btn px-6 py-2 rounded-full font-bold text-sm transition-all border border-slate-700 bg-slate-800 hover:bg-slate-700">4. COMPARACIÓN</button>
+    </nav>
+
+    <main class="max-w-5xl mx-auto w-full flex-grow">
+        
+        <!-- Tab 1: Warm-Up -->
+        <div id="tab-1" class="tab-content active">
+            <div class="glass-panel p-8 rounded-3xl">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-pencil-alt text-sky-400"></i> Graffiti en el Escritorio
+                </h2>
+                <div class="space-y-6">
+                    <p class="text-xl text-slate-300 leading-relaxed">
+                        Lee la siguiente pregunta y escribe tu respuesta directamente en tu mesa usando los marcadores.
+                    </p>
+                    <div class="bg-slate-900/50 p-8 rounded-2xl border-l-8 border-sky-500">
+                        <p class="text-2xl font-semibold text-white italic">
+                            "¿Qué influye más en la opinión política de un joven: su familia, las redes sociales o su situación económica?"
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 mt-8">
+                        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                            <h3 class="font-bold text-sky-400 mb-2 underline">Paso A</h3>
+                            <p class="text-sm">Escribe 2-3 oraciones completas. Intenta usar un registro formal.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700">
+                            <h3 class="font-bold text-sky-400 mb-2 underline">Paso B</h3>
+                            <p class="text-sm">Camina por el salón. Escribe una reacción en 3 mesas diferentes (¡Exacto!, Discrepo, Interesante).</p>
+                        </div>
+                    </div>
+                    <button onclick="showTab(2)" class="mt-8 w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 rounded-xl transition shadow-lg">Siguiente Sección: Investigación <i class="fas fa-arrow-right ml-2"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2: Research Sprint -->
+        <div id="tab-2" class="tab-content">
+            <div class="glass-panel p-8 rounded-3xl">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-search text-sky-400"></i> Sprint de Investigación
+                </h2>
+                <p class="text-slate-300 mb-6">Investiga tu región asignada. Tienes que ser un experto en estos tres puntos para el juego de "Speed Dating".</p>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-sky-500/30">
+                        <i class="fas fa-bullhorn text-3xl text-sky-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">1. La Voz</h3>
+                        <p class="text-xs text-slate-400">¿A qué edad o bajo qué circunstancias se considera que un joven tiene influencia política en esta comunidad?</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-sky-500/30">
+                        <i class="fas fa-mobile-alt text-3xl text-sky-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">2. Redes Sociales</h3>
+                        <p class="text-xs text-slate-400">¿Qué plataformas o estrategias digitales usan los jóvenes de esta región para organizarse?</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-sky-500/30">
+                        <i class="fas fa-exclamation-triangle text-3xl text-sky-400 mb-4"></i>
+                        <h3 class="font-bold mb-2">3. El Desafío</h3>
+                        <p class="text-xs text-slate-400">¿Cuál es el problema político o social (ej. educación, ambiente) que más moviliza a la juventud hoy?</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700">
+                    <h4 class="text-xs uppercase font-bold text-slate-500 tracking-widest mb-4">Temas de referencia</h4>
+                    <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-medium">
+                        <li class="bg-slate-800 p-3 rounded-lg text-center">Chile: Educación</li>
+                        <li class="bg-slate-800 p-3 rounded-lg text-center">Colombia: La Paz</li>
+                        <li class="bg-slate-800 p-3 rounded-lg text-center">Argentina: Voto Joven</li>
+                        <li class="bg-slate-800 p-3 rounded-lg text-center">México: Transparencia</li>
+                    </ul>
+                </div>
+                <button onclick="showTab(3)" class="mt-8 w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 rounded-xl transition">Ir al Juego de Speed Dating <i class="fas fa-comments ml-2"></i></button>
+            </div>
+        </div>
+
+        <!-- Tab 3: Speed Dating -->
+        <div id="tab-3" class="tab-content">
+            <div class="glass-panel p-8 rounded-3xl">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                    <h2 class="text-2xl font-bold flex items-center gap-3">
+                        <i class="fas fa-bolt text-amber-400"></i> Speed Dating Cultural
+                    </h2>
+                    <!-- Mini Timer -->
+                    <div class="bg-slate-900 px-6 py-3 rounded-2xl border-2 border-amber-500 flex items-center gap-4">
+                        <span id="speedTimer" class="text-3xl font-mono font-bold text-amber-400 timer-glow">02:00</span>
+                        <button onclick="toggleSpeedTimer()" id="speedBtn" class="bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-4 py-1 rounded-lg text-xs">START</button>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700">
+                            <h3 class="font-bold text-sky-400 mb-2">Instrucciones del Juego:</h3>
+                            <ul class="space-y-3 text-sm text-slate-300">
+                                <li><i class="fas fa-user-friends mr-2 text-sky-500"></i><strong>Parejas:</strong> Un "Experto Regional" vs. un "Representante de EE.UU."</li>
+                                <li><i class="fas fa-hourglass-start mr-2 text-sky-500"></i><strong>Tiempo:</strong> Tienes 2 minutos para comparar las realidades.</li>
+                                <li><i class="fas fa-sync mr-2 text-sky-500"></i><strong>Rotación:</strong> Cuando suene la alarma, el círculo exterior se mueve.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-amber-900/20 p-6 rounded-2xl border border-amber-500/30">
+                            <h3 class="font-bold text-amber-400 mb-4 uppercase text-xs tracking-widest">Preguntas de Discusión</h3>
+                            <ul class="space-y-4 text-sm font-semibold italic">
+                                <li>1. ¿A qué edad se considera que un joven tiene "voz" en tu comunidad?</li>
+                                <li>2. ¿Cómo usan los jóvenes las redes sociales para el cambio político?</li>
+                                <li>3. ¿Cuál es el desafío más grande que enfrenta la juventud hoy en día?</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar Resources -->
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                        <h3 class="font-bold mb-4 text-emerald-400 uppercase text-xs tracking-widest">Conectores de Comparación</h3>
+                        <div class="grid grid-cols-1 gap-2">
+                            <span class="p-2 bg-slate-900 rounded border border-slate-700 text-sm">A diferencia de...</span>
+                            <span class="p-2 bg-slate-900 rounded border border-slate-700 text-sm">De la misma manera...</span>
+                            <span class="p-2 bg-slate-900 rounded border border-slate-700 text-sm">Mientras que en [País]...</span>
+                            <span class="p-2 bg-slate-900 rounded border border-slate-700 text-sm">Al igual que en EE.UU...</span>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="showTab(4)" class="mt-8 w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 rounded-xl transition">Finalizar con la Comparación <i class="fas fa-check-double ml-2"></i></button>
+            </div>
+        </div>
+
+        <!-- Tab 4: Comparison -->
+        <div id="tab-4" class="tab-content">
+            <div class="glass-panel p-8 rounded-3xl">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="fas fa-project-diagram text-sky-400"></i> Comparación Final en Mesa
+                </h2>
+                
+                <div class="bg-slate-900 p-8 rounded-2xl border-2 border-dashed border-slate-700 mb-8 text-center">
+                    <p class="text-xl font-medium mb-4 italic">"Compara las perspectivas de los jóvenes respecto a la política en una región del mundo hispanohablante que conozcas con las perspectivas en tu propia comunidad."</p>
+                    <div class="flex justify-center gap-8">
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 border-2 border-sky-500 rounded-full flex items-center justify-center mb-2">V</div>
+                            <span class="text-xs uppercase font-bold text-slate-500">Diagrama Venn</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 border-2 border-emerald-500 rounded flex items-center justify-center mb-2">T</div>
+                            <span class="text-xs uppercase font-bold text-slate-500">T-Chart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-sky-400 uppercase text-xs tracking-widest">Vocabulario de Alto Nivel</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+                                <p class="text-xs text-slate-500">To get involved</p>
+                                <p class="font-bold text-sm">Involucrarse</p>
+                            </div>
+                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+                                <p class="text-xs text-slate-500">Awareness</p>
+                                <p class="font-bold text-sm">Concienciación</p>
+                            </div>
+                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+                                <p class="text-xs text-slate-500">To protest</p>
+                                <p class="font-bold text-sm">Manifestarse</p>
+                            </div>
+                            <div class="bg-slate-800 p-3 rounded-lg border border-slate-700">
+                                <p class="text-xs text-slate-500">To take place</p>
+                                <p class="font-bold text-sm">Llevarse a cabo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-red-900/20 p-6 rounded-2xl border border-red-500/50">
+                        <h3 class="font-bold text-red-400 mb-2 underline">¡La Prueba de Fuego!</h3>
+                        <p class="text-sm text-red-200 leading-relaxed">
+                            Si el profesor circula y ve palabras "pobres" (<em>cosas, bueno, hay, mucho</em>), tendrás que borrarlas y usar los términos sofisticados de arriba. ¡Demuestra que estás listo para el examen AP!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2024 AP Spanish Language and Culture - Prep Week</p>
+    </footer>
+
+    <script>
+        function showTab(tabIndex) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(`tab-${tabIndex}`).classList.add('active');
+            document.getElementById(`btn-${tabIndex}`).classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Speed Dating Timer Logic
+        let speedTimerInterval;
+        let speedTimeLeft = 120;
+        let isSpeedRunning = false;
+
+        function toggleSpeedTimer() {
+            const btn = document.getElementById('speedBtn');
+            const display = document.getElementById('speedTimer');
+
+            if (isSpeedRunning) {
+                clearInterval(speedTimerInterval);
+                btn.textContent = 'REANUDAR';
+                btn.className = 'bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-black px-4 py-1 rounded-lg text-xs';
+            } else {
+                speedTimerInterval = setInterval(() => {
+                    speedTimeLeft--;
+                    if (speedTimeLeft <= 0) {
+                        clearInterval(speedTimerInterval);
+                        display.textContent = "00:00";
+                        display.classList.add('animate-pulse', 'text-red-500');
+                        btn.textContent = 'RESET';
+                        return;
+                    }
+                    const mins = Math.floor(speedTimeLeft / 60);
+                    const secs = speedTimeLeft % 60;
+                    display.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                }, 1000);
+                btn.textContent = 'PAUSE';
+                btn.className = 'bg-red-500 hover:bg-red-400 text-white font-black px-4 py-1 rounded-lg text-xs';
+            }
+
+            if (btn.textContent === 'RESET') {
+                speedTimeLeft = 120;
+                display.textContent = "02:00";
+                display.classList.remove('animate-pulse', 'text-red-500');
+                btn.textContent = 'START';
+                btn.className = 'bg-amber-500 hover:bg-amber-400 text-slate-900 font-black px-4 py-1 rounded-lg text-xs';
+                isSpeedRunning = false;
+            } else {
+                isSpeedRunning = !isSpeedRunning;
+            }
+        }
+    </script>
+</body>
+</html>
